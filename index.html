@@ -403,12 +403,9 @@ function renderTimeline(){
 
     let subsHtml='';
     if(item.subs&&item.subs.length){
-      subsHtml+=`<button class="expand-btn" onclick="toggleExp('${key}',event)"><i class="ti ${isExp?'ti-chevron-up':'ti-chevron-down'}" aria-hidden="true" style="font-size:11px"></i>${isExp?'Sembunyikan detail':'Lihat detail'}</button>`;
-      if(isExp){
-        subsHtml+='<div class="sub-list">';
-        item.subs.forEach(s=>{subsHtml+=`<div class="sub-item"><span>${s}</span></div>`;});
-        subsHtml+='</div>';
-      }
+      subsHtml+='<div class="sub-list">';
+      item.subs.forEach(s=>{subsHtml+=`<div class="sub-item"><span>${s}</span></div>`;});
+      subsHtml+='</div>';
     }
 
     let progHtml='';
