@@ -117,6 +117,8 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#f0f4f3;m
 .b-place{background:#E6F1FB;color:#185FA5}
 .b-pj{background:#EEEDFE;color:#534AB7}
 .b-ket{background:#FAEEDA;color:#854F0B}
+.b-pelaksana{background:#F3E5F5;color:#6A1B9A}
+.b-kebutuhan{background:#E8F5E9;color:#2E7D32}
 
 .status-col{width:28px;flex-shrink:0;display:flex;align-items:flex-start;justify-content:center;padding-top:2px}
 .s-done{color:#1D9E75;font-size:16px}
@@ -216,30 +218,30 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#f0f4f3;m
 <script>
 const days=[
   {date:"2026-05-15",label:"Jum'at, 15 Mei 2026",items:[
-    {no:"1",s:"06:15",e:"06:40",name:"Check In",pj:"Tri Yuniar Lestari, S.Pd",place:"SD Plus 2 Al-Muhajirin",ket:"Baju Olahraga",subs:["Mengecek kehadiran siswa sesuai kelompok","Mempersiapkan perlengkapan FEC"]},
-    {no:"2",s:"06:40",e:"06:50",name:"Pelepasan oleh Ibu Direktur Kampus 2",pj:"",place:"SD Plus 2 Al-Muhajirin",ket:""},
-    {no:"3",s:"06:50",e:"07:00",name:"Peserta memasuki mobil jemputan",pj:"",place:"",ket:""},
-    {no:"4",s:"07:00",e:"08:00",name:"Perjalanan menuju Pondok Evita",pj:"",place:"",ket:""},
-    {no:"5",s:"08:00",e:"08:10",name:"Peserta tiba di Pondok Evita",pj:"",place:"Pondok Evita",ket:""},
-    {no:"6",s:"08:10",e:"08:20",name:"Peserta menuju kamar & simpan barang",pj:"Tri Yuniar & Haris Ratno Pambudi",place:"Pondok Evita",ket:""},
-    {no:"7",s:"08:20",e:"09:20",name:"Pembukaan Acara FEC",pj:"Haris Ratno Pambudi & Fahda Fauziah",place:"",ket:"",subs:["Pembukaan","Sambutan Ketua Panitia","Sambutan Kepala Sekolah","Do'a sebelum kegiatan","Foto Bersama"]},
-    {no:"8",s:"09:20",e:"11:00",name:"Sesi I — Belajar & Praktek Speaking (Membuat Vlog)",pj:"Tri Yuniar Lestari, S.Pd",place:"Aula",ket:""},
-    {no:"9",s:"11:00",e:"13:00",name:"Shalat Jum'at ke Masjid Terdekat & Istirahat",pj:"Dian Rizki & Haris Ratno Pambudi",place:"",ket:""},
-    {no:"10",s:"13:00",e:"13:30",name:"Makan Siang",pj:"Niken C, S.Pd",place:"",ket:""},
-    {no:"11",s:"13:30",e:"15:00",name:"Sesi II — Grammar & Pronunciation (Metode Pair and Square)",pj:"Tri Yuniar Lestari, S.Pd",place:"",ket:""},
-    {no:"12",s:"15:00",e:"15:40",name:"Istirahat & Shalat Ashar",pj:"Dian Rizki & Tri Yuniar Lestari",place:"",ket:"Snack"},
-    {no:"13",s:"15:40",e:"17:15",name:"Sesi III — Group Work",pj:"Tri Yuniar Lestari, S.Pd",place:"Pondok Evita",ket:"Baju GFT"},
-    {no:"14",s:"17:15",e:"19:30",name:"Istirahat, Shalat & Makan Malam",pj:"Dian Rizki & Niken C, S.Pd",place:"Aula",ket:""},
-    {no:"15",s:"19:30",e:"21:00",name:"Sesi IV — English Productive Class / Sosio Drama / Role Play",pj:"Tri Yuniar Lestari, S.Pd",place:"",ket:""},
-    {no:"16",s:"21:00",e:"27:30",name:"Istirahat / Tidur",pj:"Dian Rizki, S.Pd",place:"Pondok Evita",ket:"Baju Tidur"},
+    {no:"1",s:"06:15",e:"06:40",name:"Check In",kebutuhan:"Lembar absensi, map, pulpen, toa",pelaksana:"Seluruh Panitia FEC",pj:"Tri Yuniar Lestari, S.Pd",place:"SD Plus 2 Al-Muhajirin",ket:"Baju Olahraga",subs:["Mengecek kehadiran siswa sesuai kelompok","Mempersiapkan perlengkapan FEC"]},
+    {no:"2",s:"06:40",e:"06:50",name:"Pelepasan oleh Ibu Direktur Kampus 2",kebutuhan:"Mobil 11",pelaksana:"",pj:"",place:"SD Plus 2 Al-Muhajirin",ket:""},
+    {no:"3",s:"06:50",e:"07:00",name:"Peserta memasuki mobil jemputan",kebutuhan:"",pelaksana:"",pj:"",place:"",ket:""},
+    {no:"4",s:"07:00",e:"08:00",name:"Perjalanan menuju Pondok Evita",kebutuhan:"",pelaksana:"",pj:"",place:"",ket:""},
+    {no:"5",s:"08:00",e:"08:10",name:"Peserta tiba di Pondok Evita",kebutuhan:"",pelaksana:"",pj:"",place:"Pondok Evita",ket:""},
+    {no:"6",s:"08:10",e:"08:20",name:"Peserta menuju kamar & simpan barang",kebutuhan:"",pelaksana:"Tutor dan Panitia FEC",pj:"Tri Yuniar & Haris Ratno Pambudi",place:"Pondok Evita",ket:""},
+    {no:"7",s:"08:20",e:"09:20",name:"Pembukaan Acara FEC",kebutuhan:"Handphone, pengeras suara",pelaksana:"Tri Yuniar Lestari, S.Pd",pj:"Haris Ratno Pambudi & Fahda Fauziah",place:"",ket:"",subs:["Pembukaan","Sambutan Ketua Panitia","Sambutan Kepala Sekolah","Do'a sebelum kegiatan","Foto Bersama"]},
+    {no:"8",s:"09:20",e:"11:00",name:"Sesi I — Belajar & Praktek Speaking (Membuat Vlog)",kebutuhan:"Hand out, alat tulis, HP",pelaksana:"Tutor",pj:"Tri Yuniar Lestari, S.Pd",place:"Aula",ket:""},
+    {no:"9",s:"11:00",e:"13:00",name:"Shalat Jum'at ke Masjid Terdekat & Istirahat",kebutuhan:"Alat Solat",pelaksana:"Tutor dan Panitia FEC",pj:"Dian Rizki & Haris Ratno Pambudi",place:"",ket:""},
+    {no:"10",s:"13:00",e:"13:30",name:"Makan Siang",kebutuhan:"Makanan berat",pelaksana:"",pj:"Niken C, S.Pd",place:"",ket:""},
+    {no:"11",s:"13:30",e:"15:00",name:"Sesi II — Grammar & Pronunciation (Metode Pair and Square)",kebutuhan:"Hand out, alat tulis",pelaksana:"Pemateri",pj:"Tri Yuniar Lestari, S.Pd",place:"",ket:""},
+    {no:"12",s:"15:00",e:"15:40",name:"Istirahat & Shalat Ashar",kebutuhan:"Alat solat, Snack",pelaksana:"Tutor dan Panitia FEC",pj:"Dian Rizki & Tri Yuniar Lestari",place:"",ket:"Snack"},
+    {no:"13",s:"15:40",e:"17:15",name:"Sesi III — Group Work",kebutuhan:"Hand out, alat tulis",pelaksana:"Pemateri",pj:"Tri Yuniar Lestari, S.Pd",place:"Pondok Evita",ket:"Baju GFT"},
+    {no:"14",s:"17:15",e:"19:30",name:"Istirahat, Shalat & Makan Malam",kebutuhan:"Alat solat, makanan berat",pelaksana:"Tutor dan Panitia FEC",pj:"Dian Rizki & Niken C, S.Pd",place:"Aula",ket:""},
+    {no:"15",s:"19:30",e:"21:00",name:"Sesi IV — English Productive Class / Sosio Drama / Role Play",kebutuhan:"Hand out, alat tulis",pelaksana:"Pemateri",pj:"Tri Yuniar Lestari, S.Pd",place:"",ket:""},
+    {no:"16",s:"21:00",e:"27:30",name:"Istirahat / Tidur",kebutuhan:"",pelaksana:"Seluruh Panitia FEC",pj:"Dian Rizki, S.Pd",place:"Pondok Evita",ket:"Baju Tidur"},
   ]},
   {date:"2026-05-16",label:"Sabtu, 16 Mei 2026",items:[
-    {no:"1",s:"03:30",e:"05:00",name:"Shalat Tahajud, Subuh & Tadarus",pj:"Dian Rizki, S.Pd",place:"Aula",ket:"Baju Tidur"},
-    {no:"2",s:"05:00",e:"07:00",name:"Games Outdoor Pagi",pj:"Tri Yuniar Lestari, S.Pd",place:"Pondok Evita",ket:"Baju GFT"},
-    {no:"3",s:"07:00",e:"08:00",name:"Renang (Kondisional)",pj:"Seluruh Panitia FEC",place:"",ket:""},
-    {no:"4",s:"08:00",e:"10:00",name:"Mandi & Sarapan",pj:"Niken C, S.Pd",place:"",ket:"Baju GFT"},
-    {no:"5",s:"10:00",e:"10:45",name:"Closing, Evaluation and Reflection",pj:"Fahda Fauziah Shafira, S.Pd",place:"Pondok Evita",ket:""},
-    {no:"6",s:"10:45",e:"11:00",name:"Persiapan Check Out",pj:"Nur Ain, N. Sri Nurpikawati & Rahmawati Putri",place:"Pondok Evita",ket:"Baju kelas"},
+    {no:"1",s:"03:30",e:"05:00",name:"Shalat Tahajud, Subuh & Tadarus",kebutuhan:"Alat solat",pelaksana:"Seluruh Panitia FEC",pj:"Dian Rizki, S.Pd",place:"Aula",ket:"Baju Tidur"},
+    {no:"2",s:"05:00",e:"07:00",name:"Games Outdoor Pagi",kebutuhan:"",pelaksana:"Pemateri",pj:"Tri Yuniar Lestari, S.Pd",place:"Pondok Evita",ket:"Baju GFT"},
+    {no:"3",s:"07:00",e:"08:00",name:"Renang (Kondisional)",kebutuhan:"",pelaksana:"Seluruh Panitia FEC",pj:"Seluruh Panitia FEC",place:"",ket:""},
+    {no:"4",s:"08:00",e:"10:00",name:"Mandi & Sarapan",kebutuhan:"Alat mandi, sarapan",pelaksana:"",pj:"Niken C, S.Pd",place:"",ket:"Baju GFT"},
+    {no:"5",s:"10:00",e:"10:45",name:"Closing, Evaluation and Reflection",kebutuhan:"Lembar refleksi",pelaksana:"",pj:"Fahda Fauziah Shafira, S.Pd",place:"Pondok Evita",ket:""},
+    {no:"6",s:"10:45",e:"11:00",name:"Persiapan Check Out",kebutuhan:"Lembar absensi, pulpen",pelaksana:"",pj:"Nur Ain, N. Sri Nurpikawati & Rahmawati Putri",place:"Pondok Evita",ket:"Baju kelas"},
   ]}
 ];
 
@@ -485,8 +487,10 @@ function renderTimeline(){
     else statusIcon='<i class="ti ti-circle s-future" aria-hidden="true"></i>';
 
     let badges='';
+    if(item.kebutuhan) badges+=`<span class="badge b-kebutuhan"><i class="ti ti-clipboard-list" aria-hidden="true" style="font-size:9px"></i>${item.kebutuhan}</span>`;
+    if(item.pelaksana) badges+=`<span class="badge b-pelaksana"><i class="ti ti-run" aria-hidden="true" style="font-size:9px"></i>${item.pelaksana}</span>`;
     if(item.place) badges+=`<span class="badge b-place"><i class="ti ti-map-pin" aria-hidden="true" style="font-size:9px"></i>${item.place}</span>`;
-    if(item.pj) badges+=`<span class="badge b-pj"><i class="ti ti-user" aria-hidden="true" style="font-size:9px"></i>${item.pj}</span>`;
+    if(item.pj) badges+=`<span class="badge b-pj"><i class="ti ti-user" aria-hidden="true" style="font-size:9px"></i>PJ: ${item.pj}</span>`;
     if(item.ket) badges+=`<span class="badge b-ket"><i class="ti ti-tag" aria-hidden="true" style="font-size:9px"></i>${item.ket}</span>`;
 
     let subsHtml='';
