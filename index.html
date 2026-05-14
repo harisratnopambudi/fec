@@ -82,6 +82,8 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#f0f4f3;m
 .day-tabs{display:flex;gap:8px;padding:0.75rem 1rem 0}
 .tab{flex:1;text-align:center;padding:9px 4px;border-radius:var(--border-radius-md);font-size:12px;font-weight:500;cursor:pointer;border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);color:var(--color-text-secondary);transition:all 0.15s}
 .tab.active{background:#E1F5EE;border-color:#1D9E75;color:#0F6E56}
+#tab3{background:var(--blue-light);color:var(--blue);border-color:#cce0f5}
+#tab3.active{background:var(--blue);color:#fff;border-color:var(--blue)}
 
 /* TIMELINE */
 .tl-header{padding:0.75rem 1rem 0.4rem;display:flex;align-items:center;gap:6px}
@@ -196,9 +198,10 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#f0f4f3;m
   </div>
 </div>
 
-<div class="day-tabs">
+<div class="day-tabs" style="flex-wrap:wrap;gap:6px">
   <div class="tab active" id="tab1" onclick="switchDay(1)"><i class="ti ti-calendar-event" aria-hidden="true" style="font-size:13px;vertical-align:-2px;margin-right:3px"></i>Jum'at, 15 Mei</div>
   <div class="tab" id="tab2" onclick="switchDay(2)"><i class="ti ti-calendar-event" aria-hidden="true" style="font-size:13px;vertical-align:-2px;margin-right:3px"></i>Sabtu, 16 Mei</div>
+  <div class="tab" id="tab3" onclick="switchDay(3)" style="flex:2 1 100%"><i class="ti ti-bus" aria-hidden="true" style="font-size:13px;vertical-align:-2px;margin-right:3px"></i>Daftar Tim & Mobil</div>
 </div>
 
 <div class="clock-row">
@@ -214,20 +217,20 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#f0f4f3;m
 const days=[
   {date:"2026-05-15",label:"Jum'at, 15 Mei 2026",items:[
     {no:"1",s:"06:15",e:"06:40",name:"Check In",pj:"Tri Yuniar Lestari, S.Pd",place:"SD Plus 2 Al-Muhajirin",ket:"Baju Olahraga",subs:["Mengecek kehadiran siswa sesuai kelompok","Mempersiapkan perlengkapan FEC"]},
-    {no:"2",s:"06:40",e:"06:50",name:"Pelepasan Pak Kyai",pj:"",place:"SD Plus 2 Al-Muhajirin",ket:""},
+    {no:"2",s:"06:40",e:"06:50",name:"Pelepasan oleh Ibu Direktur Kampus 2",pj:"",place:"SD Plus 2 Al-Muhajirin",ket:""},
     {no:"3",s:"06:50",e:"07:00",name:"Peserta memasuki mobil jemputan",pj:"",place:"",ket:""},
     {no:"4",s:"07:00",e:"08:00",name:"Perjalanan menuju Pondok Evita",pj:"",place:"",ket:""},
     {no:"5",s:"08:00",e:"08:10",name:"Peserta tiba di Pondok Evita",pj:"",place:"Pondok Evita",ket:""},
     {no:"6",s:"08:10",e:"08:20",name:"Peserta menuju kamar & simpan barang",pj:"Tri Yuniar & Haris Ratno Pambudi",place:"Pondok Evita",ket:""},
     {no:"7",s:"08:20",e:"09:20",name:"Pembukaan Acara FEC",pj:"Haris Ratno Pambudi & Fahda Fauziah",place:"",ket:"",subs:["Pembukaan","Sambutan Ketua Panitia","Sambutan Kepala Sekolah","Do'a sebelum kegiatan","Foto Bersama"]},
-    {no:"8",s:"09:20",e:"11:00",name:"Sesi I — Belajar & Praktik Speaking",pj:"Tri Yuniar Lestari, S.Pd",place:"Aula",ket:""},
-    {no:"9",s:"11:00",e:"13:00",name:"Shalat Jum'at & Istirahat",pj:"Dian Rizki & Haris Ratno Pambudi",place:"",ket:""},
+    {no:"8",s:"09:20",e:"11:00",name:"Sesi I — Belajar & Praktek Speaking (Membuat Vlog)",pj:"Tri Yuniar Lestari, S.Pd",place:"Aula",ket:""},
+    {no:"9",s:"11:00",e:"13:00",name:"Shalat Jum'at ke Masjid Terdekat & Istirahat",pj:"Dian Rizki & Haris Ratno Pambudi",place:"",ket:""},
     {no:"10",s:"13:00",e:"13:30",name:"Makan Siang",pj:"Niken C, S.Pd",place:"",ket:""},
-    {no:"11",s:"13:30",e:"15:00",name:"Sesi II — Grammar & Pronunciation",pj:"Tri Yuniar Lestari, S.Pd",place:"",ket:""},
+    {no:"11",s:"13:30",e:"15:00",name:"Sesi II — Grammar & Pronunciation (Metode Pair and Square)",pj:"Tri Yuniar Lestari, S.Pd",place:"",ket:""},
     {no:"12",s:"15:00",e:"15:40",name:"Istirahat & Shalat Ashar",pj:"Dian Rizki & Tri Yuniar Lestari",place:"",ket:"Snack"},
-    {no:"13",s:"15:40",e:"17:15",name:"Sesi III — Conversation",pj:"Tri Yuniar Lestari, S.Pd",place:"Pondok Evita",ket:"Baju GFT"},
+    {no:"13",s:"15:40",e:"17:15",name:"Sesi III — Group Work",pj:"Tri Yuniar Lestari, S.Pd",place:"Pondok Evita",ket:"Baju GFT"},
     {no:"14",s:"17:15",e:"19:30",name:"Istirahat, Shalat & Makan Malam",pj:"Dian Rizki & Niken C, S.Pd",place:"Aula",ket:""},
-    {no:"15",s:"19:30",e:"21:00",name:"Sesi IV — English Productive Class",pj:"Tri Yuniar Lestari, S.Pd",place:"",ket:""},
+    {no:"15",s:"19:30",e:"21:00",name:"Sesi IV — English Productive Class / Sosio Drama / Role Play",pj:"Tri Yuniar Lestari, S.Pd",place:"",ket:""},
     {no:"16",s:"21:00",e:"27:30",name:"Istirahat / Tidur",pj:"Dian Rizki, S.Pd",place:"Pondok Evita",ket:"Baju Tidur"},
   ]},
   {date:"2026-05-16",label:"Sabtu, 16 Mei 2026",items:[
@@ -235,10 +238,95 @@ const days=[
     {no:"2",s:"05:00",e:"07:00",name:"Games Outdoor Pagi",pj:"Tri Yuniar Lestari, S.Pd",place:"Pondok Evita",ket:"Baju GFT"},
     {no:"3",s:"07:00",e:"08:00",name:"Renang (Kondisional)",pj:"Seluruh Panitia FEC",place:"",ket:""},
     {no:"4",s:"08:00",e:"10:00",name:"Mandi & Sarapan",pj:"Niken C, S.Pd",place:"",ket:"Baju GFT"},
-    {no:"5",s:"10:00",e:"10:45",name:"Free Time — Closing, Evaluasi & Refleksi",pj:"Fahda Fauziah Shafira, S.Pd",place:"Pondok Evita",ket:""},
+    {no:"5",s:"10:00",e:"10:45",name:"Closing, Evaluation and Reflection",pj:"Fahda Fauziah Shafira, S.Pd",place:"Pondok Evita",ket:""},
     {no:"6",s:"10:45",e:"11:00",name:"Persiapan Check Out",pj:"Nur Ain, N. Sri Nurpikawati & Rahmawati Putri",place:"Pondok Evita",ket:"Baju kelas"},
   ]}
 ];
+
+
+const teams = [
+  { mobil: 1, color: '#E91E63', members: [
+    '<span style="background:#E1F5EE;color:#0F6E56;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600">Ms Lia</span>', '<span style="background:#E1F5EE;color:#0F6E56;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600">Ms Irmy</span>',
+    'Adeeva Gie Syauqiyyah','Afiqa Hadiana Putri','Allura Shakila Putri Anggoro',
+    'Arsyakira Putri Mustika Zaeni','Aysha Zevita Azies','Earlytha Ivana Myesha',
+    'Khanza Hanin Adzkia','Kimmy Maza Arsy','Kirana Ayudhatri Shamitha Pramono',
+    'Lintang Ayudia Maheswari','Novinka Farzana Prameswari','Qianna Arcelia Sanjaya',
+    'Rafalyn Azzalia Thonthowi','Shakila Adeeva Azkayra'
+  ]},
+  { mobil: 2, color: '#1565C0', members: [
+    '<span style="background:#E1F5EE;color:#0F6E56;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600">Ms Ain</span>',
+    'Abqari Runako Arsenio','Alan Agustian','Aldric Alexi Rafathar',
+    'Aryasatya Radhitya Prasaja','Demikha Aditya Azka','Fatih Rezqiano Mubarak',
+    'Hamizan Alkhalifi','Jahran Dzaki Julyan','Mokhamad Aldeif Fabrizio'
+  ]},
+  { mobil: 3, color: '#2E7D32', members: [
+    '<span style="background:#E1F5EE;color:#0F6E56;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600">Ms Niken</span>',
+    'Muhammad Andhra Pradipta','Muhammad Arfan Alfarizi','Putu Keenan Athalla Arkhasya',
+    'Radit Urip Dwicahyo','Syamil Adinatawika','Syamil Arkhaan Athaya Setiawan',
+    'Zain Muhammad Hamizan S','Ziyad Zuhdi Zaini'
+  ]},
+  { mobil: 4, color: '#E65100', members: [
+    '<span style="background:#E1F5EE;color:#0F6E56;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600">Ms Rahma</span>',
+    'Adzkia Samha Saufa','Agni Zahira Khairunnisa','Alifah Filah Khoerunnisa',
+    'Amarra Deviandra','Anindita Putri','Hayfa Fitria Humaira','Kanaya Almashyra Zafreen'
+  ]},
+  { mobil: 5, color: '#F9A825', members: [
+    '<span style="background:#E1F5EE;color:#0F6E56;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600">Ms Fahda</span>',
+    'Madina Setiawan Putri','Marinkha Amabella Marshelo','Mikaila Grisella Aulia',
+    'Mikayla Armydia Febri','Putri Aqila','Rasendrya Xaviera Kasmir',
+    'Shakeela Raisha Putri Kurdi'
+  ]},
+  { mobil: 6, color: '#C62828', members: [
+    '<span style="background:#E1F5EE;color:#0F6E56;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600">Mr Dede</span>',
+    'Abqori Agam Dewanta','Akmal Andriey As Syafa','Alfero Mulia',
+    'Ararya Kenzie Ramadhan','Arash Hadrian','Arga Ananta Fitriansyah',
+    'Athar Rayyan Indrayana','Daituqo Akira Shaquille'
+  ]},
+  { mobil: 7, color: '#1565C0', members: [
+    '<span style="background:#E1F5EE;color:#0F6E56;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600">Mr Haris</span>',
+    'Dewantara Rajendra Wira Freshtiadie','Ghaisan Zhafif Amirudin',
+    'Haikal Lais Arsalan','Kevin Adellio Suryajaya','Muhammad Fadhil Mubaroq',
+    'Muhammad Hafidz Al Fatih','Panji Satrio Nur Kholik'
+  ]},
+  { mobil: 8, color: '#E91E63', members: [
+    '<span style="background:#E1F5EE;color:#0F6E56;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600">Ms Fika</span>',
+    'Riha','Kayla','Adzkia','Diandra','Khaira','Dema','Oshin','Shayla'
+  ]},
+  { mobil: 9, color: '#F9A825', members: [
+    '<span style="background:#E1F5EE;color:#0F6E56;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600">Ms Tari</span>',
+    'Nisa','Angel','Zahra','Cintana','Cilaa','Najya','Ufaira','Akira'
+  ]},
+  { mobil: 10, color: '#F9A825', members: [
+    '<span style="background:#E1F5EE;color:#0F6E56;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600">Mr Gilang</span>',
+    'Altamis','Azka','Athalla','Danish','Yoshio','Zeeshan','Radya','Habibi'
+  ]},
+];
+
+function renderTeams(){
+  const tl = document.getElementById('timeline');
+  let html = '<div style="padding:0.75rem 1rem 1.5rem">';
+  html += '<div style="font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.75rem"><i class="ti ti-bus" style="font-size:11px;vertical-align:-1px;margin-right:4px"></i>Daftar Tim & Mobil — FEC 2026</div>';
+  
+  teams.forEach(t => {
+    html += `<div style="margin-bottom:12px;border:0.5px solid var(--color-border-secondary);border-radius:12px;overflow:hidden">
+      <div style="background:${t.color};padding:10px 14px;display:flex;align-items:center;gap:8px">
+        <i class="ti ti-bus" style="color:rgba(255,255,255,0.8);font-size:16px"></i>
+        <span style="font-size:14px;font-weight:600;color:#fff">Mobil ${t.mobil}</span>
+        <span style="margin-left:auto;font-size:11px;color:rgba(255,255,255,0.7)">${t.members.length} orang</span>
+      </div>
+      <div style="padding:8px 14px 10px;background:var(--color-background-primary)">`;
+    t.members.forEach((m,i) => {
+      html += `<div style="padding:5px 0;border-bottom:0.5px solid var(--color-border-tertiary);font-size:12.5px;color:var(--color-text-primary);display:flex;gap:8px;align-items:center">
+        <span style="width:20px;font-size:11px;color:var(--color-text-secondary);flex-shrink:0;text-align:right">${i+1}.</span>
+        <span>${m}</span>
+      </div>`;
+    });
+    html += `</div></div>`;
+  });
+  
+  html += '</div>';
+  tl.innerHTML = html;
+}
 
 let currentDay=1;
 let expanded={};
@@ -441,6 +529,15 @@ function switchDay(d){
   currentDay=d;
   document.getElementById('tab1').className='tab'+(d===1?' active':'');
   document.getElementById('tab2').className='tab'+(d===2?' active':'');
+  document.getElementById('tab3').className='tab'+(d===3?' active':'');
+  const isTeamTab = d===3;
+  // Show/hide cards
+  ['overall-card','now-card','next-card'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.style.display=isTeamTab?'none':'';
+  });
+  document.getElementById('clock-val').parentElement.style.display=isTeamTab?'none':'';
+  if(isTeamTab){ renderTeams(); return; }
   updateNowCards();
   renderTimeline();
 }
